@@ -32,8 +32,8 @@ Ardından, bir "BlogContext" adında bir bağlam (context) oluşturuyoruz. Bu ba
          default:
              return state;
     }
-};
-`
+};`
+
  sadece 'add_blogpost' eylemi işlenir ve "Angular" başlıklı bir blog gönderir.
 
  "BlogProvider" adında bir bileşen oluşturuyoruz, bu bileşen içinde "blogPost" adında bir durum (state) ve "dispatch" adında bir işlev elde ediyoruz. Bu işlev, "blogReducer" kullanarak veri yönetimini yapar. Başlangıçta, iki blog gönderisiyle başlatılır:
