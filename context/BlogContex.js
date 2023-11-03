@@ -1,4 +1,4 @@
-import React , {useState , useReducer} from "react";
+import React , { useReducer} from "react";
 
 
 const BlogContext = React.createContext();
@@ -18,15 +18,10 @@ export const BlogProvider = ({children}) =>{
         {title: 'JavaScripy'},
     ]
     )
-
-
-
-
-    // const [blogPost, setBlogPost] = useState([
-    //     
-    // ])
+  
     const addBlogPost = () =>{
-        // setBlogPost([...blogPost, {title:'Vue Js'}])
+     
+        dispatch({type: 'add_blogpost'})
     }
 
     return <BlogContext.Provider value={{data:blogPost , addBlogPost}} >{children}</BlogContext.Provider>;
