@@ -21,7 +21,7 @@
 
 Ardından, bir "BlogContext" adında bir bağlam (context) oluşturuyoruz. Bu bağlam, uygulama içindeki verilere erişim sağlar
 
-    ``const BlogContext = React.createContext();``
+    `const BlogContext = React.createContext();`
 
 "blogReducer" adında bir fonksiyon oluşturuyoruz. Bu, useReducer ile kullanılacak bir veri yönetim fonksiyonudur. "action" nesnesine bağlı olarak belirli eylemleri işler
 
