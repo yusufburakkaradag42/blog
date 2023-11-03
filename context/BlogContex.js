@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useState} from "react";
 
 
 const BlogContext = React.createContext();
@@ -6,9 +6,15 @@ const BlogContext = React.createContext();
 
 
 export const BlogProvider = ({children}) =>{
-    const blogPosts =[{title:'React Native' },{title: 'JavaScripy'}]
+    const [blogPost, setBlogPost] = useState([
+        {title:'React Native' },
+        {title: 'JavaScripy'},
+    ])
+    const addBlogPost = () =>{
+        setBlogPost([...blogPost, {title:'Vue Js'}])
+    }
 
-    return <BlogContext.Provider value={blogPosts} >{children}</BlogContext.Provider>;
+    return <BlogContext.Provider value={{data:blogPost , addBlogPost}} >{children}</BlogContext.Provider>;
 }
 
 export default BlogContext;
