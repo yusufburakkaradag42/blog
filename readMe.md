@@ -48,7 +48,7 @@ const BlogContext = React.createContext();
 
     return <BlogContext.Provider value={{ data: blogPost, addBlogPost }}>{children}</BlogContext.Provider>;
 };
-
+''
  export const BlogProvider = ({ children }) => {
     const [blogPost, dispatch] = useReducer(blogReducer, [
         { title: 'React Native' },
@@ -58,7 +58,7 @@ const BlogContext = React.createContext();
     // ...
 
     return <BlogContext.Provider value={{ data: blogPost, addBlogPost }}>{children}</BlogContext.Provider>;
-}; 
+}; ''
 "addBlogPost" adında bir işlev oluşturulur. Bu işlev, "dispatch" işlemini kullanarak "add_blogpost" eylemini çağırır. Bu, yeni bir blog gönderisi ekler:
 const addBlogPost = () => {
     dispatch({ type: 'add_blogpost' });
