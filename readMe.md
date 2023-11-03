@@ -49,7 +49,7 @@ Ardından, bir "BlogContext" adında bir bağlam (context) oluşturuyoruz. Bu ba
     return <BlogContext.Provider value={{ data: blogPost, addBlogPost }}>{children}</BlogContext.Provider>;
 };
 ''
- export const BlogProvider = ({ children }) => {
+`` export const BlogProvider = ({ children }) => {
     const [blogPost, dispatch] = useReducer(blogReducer, [
         { title: 'React Native' },
         { title: 'JavaScript' },
@@ -58,15 +58,15 @@ Ardından, bir "BlogContext" adında bir bağlam (context) oluşturuyoruz. Bu ba
     
 
     return <BlogContext.Provider value={{ data: blogPost, addBlogPost }}>{children}</BlogContext.Provider>;
-}; 
+}; ``
 "addBlogPost" adında bir işlev oluşturulur. Bu işlev, "dispatch" işlemini kullanarak "add_blogpost" eylemini çağırır. Bu, yeni bir blog gönderisi ekler:
-'
+``    '
     const addBlogPost = () => {
         dispatch({ type: 'add_blogpost' });
     };
-'
+    '``
 "BlogContext.Provider" ile sarılı "children" bileşenleri, "BlogContext" bağlamına "data" ve "addBlogPost" değerlerini iletmek için kullanılır
-'
+``'
     return <BlogContext.Provider value={{ data: blogPost, addBlogPost }}>{children}</BlogContext.Provider>;
-'
+'``
  "BlogProvider" bileşeni içindeki bileşenler "BlogContext" aracılığıyla "blogPost" verisine ve "addBlogPost" işlevine erişebilirler. Bu, verilerin uygulama genelinde paylaşılmasını ve yönetilmesini sağlar.
