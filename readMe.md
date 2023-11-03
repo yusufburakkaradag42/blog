@@ -21,11 +21,11 @@
 
 Ardından, bir "BlogContext" adında bir bağlam (context) oluşturuyoruz. Bu bağlam, uygulama içindeki verilere erişim sağlar
 
-const BlogContext = React.createContext();
+    ``const BlogContext = React.createContext();``
 
 "blogReducer" adında bir fonksiyon oluşturuyoruz. Bu, useReducer ile kullanılacak bir veri yönetim fonksiyonudur. "action" nesnesine bağlı olarak belirli eylemleri işler
 
-    const blogReducer = (state, action) => {
+  `  const blogReducer = (state, action) => {
         switch (action.type) {
             case 'add_blogpost':
             return [...state, { title: 'Angular' }];
@@ -33,16 +33,16 @@ const BlogContext = React.createContext();
              return state;
     }
 };
-
+`
  sadece 'add_blogpost' eylemi işlenir ve "Angular" başlıklı bir blog gönderir.
 
  "BlogProvider" adında bir bileşen oluşturuyoruz, bu bileşen içinde "blogPost" adında bir durum (state) ve "dispatch" adında bir işlev elde ediyoruz. Bu işlev, "blogReducer" kullanarak veri yönetimini yapar. Başlangıçta, iki blog gönderisiyle başlatılır:
 
-    export const BlogProvider = ({ children }) => {
+ `   export const BlogProvider = ({ children }) => {
         const [blogPost, dispatch] = useReducer(blogReducer, [
             { title: 'React Native' },
             { title: 'JavaScript' },
-    ]);
+    ]);`
 
     // ...
 
