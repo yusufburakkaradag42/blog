@@ -55,17 +55,18 @@ const BlogContext = React.createContext();
         { title: 'JavaScript' },
     ]);
 
-    // ...
+    
 
     return <BlogContext.Provider value={{ data: blogPost, addBlogPost }}>{children}</BlogContext.Provider>;
-}; ''
+}; ''// ...
 "addBlogPost" adında bir işlev oluşturulur. Bu işlev, "dispatch" işlemini kullanarak "add_blogpost" eylemini çağırır. Bu, yeni bir blog gönderisi ekler:
-const addBlogPost = () => {
-    dispatch({ type: 'add_blogpost' });
-};
-
+'
+    const addBlogPost = () => {
+        dispatch({ type: 'add_blogpost' });
+    };
+'
 "BlogContext.Provider" ile sarılı "children" bileşenleri, "BlogContext" bağlamına "data" ve "addBlogPost" değerlerini iletmek için kullanılır
-
-return <BlogContext.Provider value={{ data: blogPost, addBlogPost }}>{children}</BlogContext.Provider>;
-
+'
+    return <BlogContext.Provider value={{ data: blogPost, addBlogPost }}>{children}</BlogContext.Provider>;
+'
  "BlogProvider" bileşeni içindeki bileşenler "BlogContext" aracılığıyla "blogPost" verisine ve "addBlogPost" işlevine erişebilirler. Bu, verilerin uygulama genelinde paylaşılmasını ve yönetilmesini sağlar.
