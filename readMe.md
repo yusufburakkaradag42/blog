@@ -6,12 +6,12 @@
  npx expo start 
 
 ## Navigation Kurulumu 
-npm install @react-navigation/native
+        npm install @react-navigation/native
 ## expo kulladığımız için 
-npm install react-native-screens react-native-safe-area-context
+        npm install react-native-screens react-native-safe-area-context
 
 
-npm install @react-navigation/native-stack
+        npm install @react-navigation/native-stack
 
 
 ## BlogContext.js 
@@ -58,7 +58,7 @@ const BlogContext = React.createContext();
     
 
     return <BlogContext.Provider value={{ data: blogPost, addBlogPost }}>{children}</BlogContext.Provider>;
-}; ''// ...
+}; 
 "addBlogPost" adında bir işlev oluşturulur. Bu işlev, "dispatch" işlemini kullanarak "add_blogpost" eylemini çağırır. Bu, yeni bir blog gönderisi ekler:
 '
     const addBlogPost = () => {
