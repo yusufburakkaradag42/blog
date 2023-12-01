@@ -9,4 +9,8 @@ export default function CreateScreen() {
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+
+
+  
+})
