@@ -1,9 +1,11 @@
 import { StyleSheet, Text, View , FlatList , Button} from 'react-native'
 import React ,{useContext} from 'react'
-import BlogContext from '../context/BlogContex'
+import {Context} from '../context/BlogContex'
+import { Feather } from '@expo/vector-icons';
+
 
 export default function IndexScreen() {
-  const {data , addBlogPost} = useContext(BlogContext)
+  const {state , addBlogPost} = useContext(Context)
 
   return (
     <View>
@@ -12,15 +14,32 @@ export default function IndexScreen() {
       onPress={addBlogPost}
       />
       <FlatList
-      data={data}
+      data={state}
       keyExtractor={(blogPost) => blogPost.title} // her bir datanın birbirinden farklı olduğunu belirtmek için,
       renderItem={({item}) =>{ // Bastırmak için 
-          return <Text>{item.title} </Text>
+          return (
+          <View style={styles.row}>
+          <Text style={styles.title}>{item.title} </Text>
+          <Feather  name="trash" size={24} color="black" />
+          </View>
+          )
       }}
      
        />
     </View>
   )
-}
+} 
+const styles = StyleSheet.create({
+  row:{
+    flexDirection:"row",
+    justifyContent: 'space-between',
+    borderTopWidth: 1,
+    paddingHorizontal: 1, //yatay arasını açma
+    paddingVertical:20, //dikey arasını açma
+    borderColor: 'gray',
+  },
+  title:{
+    fontSize:24,
+  },
 
-const styles = StyleSheet.create({})
+})

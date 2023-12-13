@@ -1,18 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// import { StatusBar } from 'expo-status-bar';
+// import { StyleSheet, Text, View } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import IndexScreen from './screens/IndexScreen';
 import CreateScreen from './screens/CreateScreen';
-import { BlogProvider } from './context/BlogContex';
+import { Provider } from './context/BlogContex';
 
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <BlogProvider>
+    <Provider>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{ headerTitle: 'Blog Uygulaması' }}>
           <Stack.Screen name="Index" 
@@ -25,6 +25,6 @@ export default function App() {
             />
         </Stack.Navigator>
       </NavigationContainer>
-    </BlogProvider>
+    </Provider>
   );
 }
