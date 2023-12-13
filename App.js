@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import IndexScreen from './screens/IndexScreen';
 import CreateScreen from './screens/CreateScreen';
 import { Provider } from './context/BlogContex';
+import ShowScreen from './screens/ShowScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -21,6 +22,10 @@ export default function App() {
            />
           <Stack.Screen name="Create"
            component={CreateScreen}
+
+            />
+           <Stack.Screen name="Show"
+           component={ShowScreen}
 
             />
         </Stack.Navigator>

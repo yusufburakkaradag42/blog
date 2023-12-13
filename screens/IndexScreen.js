@@ -2,15 +2,16 @@ import { StyleSheet, Text, View, FlatList, Button, TouchableOpacity } from 'reac
 import React, { useContext } from 'react'
 import { Context } from '../context/BlogContex'
 import { Feather } from '@expo/vector-icons';
+import ShowScreen from './ShowScreen';
 
 
-export default function IndexScreen() {
+export default function IndexScreen({ navigation }) {
   //dışarıya açtıklarımızı çekmek için 
-  const { state, addBlogPost ,deleteBlogPost } = useContext(Context)
+  const { state, addBlogPost, deleteBlogPost } = useContext(Context)
 
   return (
     <View>
-      {/* <Text>IndexScreen</Text> */}
+
       <Button title='Ekle'
         onPress={addBlogPost}
       />
@@ -19,14 +20,15 @@ export default function IndexScreen() {
         keyExtractor={(blogPost) => blogPost.id} // her bir datanın birbirinden farklı olduğunu belirtmek için,
         renderItem={({ item }) => { // Bastırmak için 
           return (
-            <View style={styles.row}>
-              <Text style={styles.title}>{item.title} </Text>
-              <TouchableOpacity // delete işlemeri için
-                onPress={() => deleteBlogPost(item.id)}>
-                <Feather name="trash" size={24} color="black" />
-              </TouchableOpacity>
-
-            </View>
+            <TouchableOpacity onPress={() => navigation.navigate('Show', { id: item.id })}>
+              <View style={styles.row}>
+                <Text style={styles.title}>{item.title} </Text>
+                <TouchableOpacity // delete işlemeri için
+                  onPress={() => deleteBlogPost(item.id)}>
+                  <Feather name="trash" size={24} color="black" />
+                </TouchableOpacity>
+              </View>
+            </TouchableOpacity>
           )
         }}
 
