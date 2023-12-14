@@ -17,7 +17,7 @@ export default function IndexScreen({ navigation }) {
       />
       <FlatList
         data={state}
-        keyExtractor={(blogPost) => blogPost.id} // her bir datanın birbirinden farklı olduğunu belirtmek için,
+        keyExtractor={(blogPost) => blogPost.id} // her bir datanın birbirinden farklı olduğunu belirtmek için
         renderItem={({ item }) => { // Bastırmak için 
           return (
             <TouchableOpacity onPress={() => navigation.navigate('Show', { id: item.id })}>
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     paddingHorizontal: 1, //yatay arasını açma
     paddingVertical: 20, //dikey arasını açma
-    borderColor: 'gray',
+    borderColor: 'blue',
   },
   title: {
     fontSize: 24,

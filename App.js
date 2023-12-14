@@ -7,7 +7,8 @@ import IndexScreen from './screens/IndexScreen';
 import CreateScreen from './screens/CreateScreen';
 import { Provider } from './context/BlogContex';
 import ShowScreen from './screens/ShowScreen';
-
+import { TouchableOpacity } from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,7 +19,17 @@ export default function App() {
         <Stack.Navigator screenOptions={{ headerTitle: 'Blog Uygulaması' }}>
           <Stack.Screen name="Index" 
           component={IndexScreen}
+          options={({navigation})=>({// create ekranına yönlendirme
 
+            headerRight:()=>(
+              <TouchableOpacity 
+              onPress={()=>navigation.navigate('Create')}
+              >
+                <AntDesign name="plus" size={24} color="black" />
+              </TouchableOpacity>
+            )
+
+          })}
            />
           <Stack.Screen name="Create"
            component={CreateScreen}

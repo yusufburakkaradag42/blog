@@ -3,7 +3,7 @@ import createDataContext from './createDataContext';
 
 const blogReducer = (state, action) => {
   switch (action.type) {
-    case 'add_blogpost':
+    case 'add_blogpost'://ekleme işlemi
       return [...state, {
         id:Math.floor(Math.random()*999999),//rastgele id numarası atama 
         title: 'NodeJs',
@@ -34,9 +34,10 @@ const deleteBlogPost =(dispatch)=>{//silme işlemi
 
 
 export const { Context, Provider } = createDataContext(// dışarıya açma
-
   blogReducer,
-  { addBlogPost, deleteBlogPost },
+  { addBlogPost,
+     deleteBlogPost,
+     },
   []
 
 );
