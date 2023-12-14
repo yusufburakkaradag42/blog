@@ -9,7 +9,8 @@ import { Provider } from './context/BlogContex';
 import ShowScreen from './screens/ShowScreen';
 import { TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
-
+import EditScreen from './screens/EditScreen';
+import { Feather } from '@expo/vector-icons';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -17,28 +18,43 @@ export default function App() {
     <Provider>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{ headerTitle: 'Blog Uygulaması' }}>
-          <Stack.Screen name="Index" 
-          component={IndexScreen}
-          options={({navigation})=>({// create ekranına yönlendirme
+          <Stack.Screen name="Index"
+            component={IndexScreen}
+            options={({ navigation }) => ({// create ekranına yönlendirme
 
-            headerRight:()=>(
-              <TouchableOpacity 
-              onPress={()=>navigation.navigate('Create')}
-              >
-                <AntDesign name="plus" size={24} color="black" />
-              </TouchableOpacity>
-            )
+              headerRight: () => (
+                <TouchableOpacity
+                  onPress={() => navigation.navigate('Create')}
+                >
+                  <AntDesign name="plus" size={24} color="black" />
+                </TouchableOpacity>
+              )
 
-          })}
-           />
+            })}
+          />
           <Stack.Screen name="Create"
-           component={CreateScreen}
+            component={CreateScreen}
 
-            />
-           <Stack.Screen name="Show"
-           component={ShowScreen}
+          />
 
-            />
+
+          <Stack.Screen name="Show"
+            component={ShowScreen}
+            options={({ navigation }) => ({
+              headerRight: () => (
+                <TouchableOpacity
+                  onPress={() => navigation.navigate('Edit')}
+                >
+                  <Feather name="edit" size={24} color="black" />
+                </TouchableOpacity>
+              )
+            })}
+
+          />
+          <Stack.Screen name="Edit"
+            component={EditScreen}
+
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
