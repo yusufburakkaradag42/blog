@@ -17,8 +17,8 @@ export default function IndexScreen({ navigation }) {
       />
       <FlatList
         data={state}
-        keyExtractor={(blogPost) => blogPost.id} // her bir datanın birbirinden farklı olduğunu belirtmek için
-        renderItem={({ item }) => { // Bastırmak için 
+        keyExtractor={(blogPost) => blogPost.id}
+        renderItem={({ item }) => { 
           return (
             <TouchableOpacity onPress={() => navigation.navigate('Show', { id: item.id })}>
               <View style={styles.row}>
